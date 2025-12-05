@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>All Projects | L Venkata Subramanyam</title>
+  <title>L Venkata Subramanyam | Portfolio</title>
   <style>
     *{margin:0;padding:0;box-sizing:border-box;}
     body{font-family:system-ui,-apple-system,sans-serif;background:#0a0e1a;color:#e2e8f0;line-height:1.6;overflow-x:hidden;}
@@ -18,16 +18,19 @@
     nav a:hover{color:#60a5fa;}
     
     /* Hero */
-    .hero{min-height:70vh;background:linear-gradient(135deg,#0a0e1a 0%,#1e293b 100%);display:flex;align-items:center;justify-content:center;text-align:center;padding:0 2rem;position:relative;overflow:hidden;}
+    .hero{min-height:100vh;background:linear-gradient(135deg,#0a0e1a 0%,#1e293b 100%);display:flex;align-items:center;justify-content:center;text-align:center;padding:0 2rem;position:relative;overflow:hidden;}
     .hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.05)"/><circle cx="75" cy="75" r="1.5" fill="rgba(255,255,255,0.03)"/><circle cx="50" cy="10" r="0.8" fill="rgba(255,255,255,0.04)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');}
     .hero-content{max-width:800px;}
     .hero h1{font-size:clamp(3rem,8vw,6rem);font-weight:800;margin-bottom:1rem;background:linear-gradient(135deg,#60a5fa,#a78bfa);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+    .hero h2{font-size:1.5rem;color:#94a3b8;margin-bottom:2rem;font-weight:400;}
     .hero p{font-size:1.2rem;max-width:600px;margin:0 auto 2rem;color:#cbd5e1;}
-    .back-btn{display:inline-block;padding:1rem 2.5rem;background:linear-gradient(135deg,#6b7280,#9ca3af);color:#0a0e1a;border-radius:50px;font-weight:600;font-size:1.1rem;text-decoration:none;transition:all .3s;}
-    .back-btn:hover{transform:translateY(-3px);background:linear-gradient(135deg,#9ca3af,#f1f5f9);}
+    .cta{display:inline-block;padding:1rem 2.5rem;background:linear-gradient(135deg,#60a5fa,#3b82f6);color:white;border-radius:50px;font-weight:600;font-size:1.1rem;text-decoration:none;transition:all .3s;box-shadow:0 10px 30px rgba(96,165,250,.3);}
+    .cta:hover{transform:translateY(-3px);box-shadow:0 15px 40px rgba(96,165,250,.4);}
     
-    /* Projects */
-    .projects{padding:6rem 2rem;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:2rem;}
+    /* Featured Projects */
+    .featured{padding:6rem 2rem;max-width:1200px;margin:0 auto;}
+    .featured h2{font-size:3rem;font-weight:700;text-align:center;margin-bottom:3rem;color:#f1f5f9;}
+    .featured-projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:2rem;}
     .project{background:linear-gradient(145deg,#1e293b,#334155);border-radius:20px;padding:2rem;overflow:hidden;position:relative;transition:transform .3s;border:1px solid rgba(96,165,250,.1);}
     .project:hover{transform:translateY(-10px);}
     .project img{width:100%;height:200px;object-fit:cover;border-radius:12px;margin-bottom:1.5rem;}
@@ -38,6 +41,34 @@
     .project-links{display:flex;gap:1rem;margin-top:1.5rem;flex-wrap:wrap;}
     .project-links a{color:#60a5fa;text-decoration:none;font-weight:500;font-size:.9rem;}
     
+    /* View All Button */
+    .view-all{text-align:center;margin:4rem 0;}
+    .view-all-btn{display:inline-block;padding:1.2rem 3rem;background:linear-gradient(135deg,#10b981,#059669);color:white;border-radius:50px;font-weight:700;font-size:1.2rem;text-decoration:none;transition:all .3s;box-shadow:0 10px 30px rgba(16,185,129,.3);}
+    .view-all-btn:hover{transform:translateY(-3px);box-shadow:0 15px 40px rgba(16,185,129,.4);}
+    
+    /* Skills */
+    .skills{padding:6rem 2rem;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem;}
+    .skill-card{background:linear-gradient(145deg,#1e293b,#334155);border-radius:20px;padding:2.5rem;text-align:center;border:1px solid rgba(96,165,250,.1);}
+    .skill-card h3{font-size:1.3rem;margin-bottom:1rem;color:#f1f5f9;}
+    .skill-list{list-style:none;}
+    .skill-list li{color:#cbd5e1;margin-bottom:.5rem;}
+    /* Add this to your existing styles */
+.skills {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+@media (max-width: 768px) {
+  .skills {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+    /* About */
+    .about{padding:6rem 2rem;max-width:800px;margin:0 auto;text-align:center;}
+    .about h2{font-size:3rem;font-weight:700;margin-bottom:2rem;color:#f1f5f9;}
+    .about p{font-size:1.1rem;color:#cbd5e1;line-height:1.8;max-width:700px;margin:0 auto 2rem;}
+    
     /* Footer */
     footer{background:#0a0e1a;padding:3rem 2rem;text-align:center;border-top:1px solid #1e293b;}
     .social{display:flex;justify-content:center;gap:2rem;margin-bottom:1rem;}
@@ -47,7 +78,8 @@
     @media (max-width:768px){
       nav{padding:0 1rem;}
       nav ul{gap:1rem;font-size:.9rem;}
-      .projects{padding:4rem 1rem;}
+      .featured,.skills,.about{padding:4rem 1rem;}
+      .featured h2{font-size:2rem;}
       .project-links{flex-direction:column;}
     }
   </style>
@@ -58,85 +90,58 @@
     <nav>
       <div class="logo">L Venkata Subramanyam</div>
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <a href="projects.html">Projects</a>
-        <li><a href="index.html#skills">Skills</a></li>
-        <li><a href="index.html#about">About</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
 
   <!-- Hero -->
-  <section class="hero">
+  <section id="home" class="hero">
     <div class="hero-content">
-      <h1>All Projects</h1>
-      <p>Complete collection of my work across IoT, robotics, computer vision, systems programming, and full-stack development.</p>
-      <a href="index.html" class="back-btn">← Back to Home</a>
+      <h1>L Venkata Subramanyam</h1>
+      <h2>3rd Year ICT @ DAU</h2>
+      <p>Building IoT systems, robotics, web, mobile apps & system programming.<br></p>
+      <a href="#featured" class="cta">Featured Projects</a>
     </div>
   </section>
 
-  <!-- All Projects -->
-  <section class="projects">
+  <!-- Featured Projects (3 top projects) -->
+  <section id="featured" class="featured">
+    <h2>Featured Projects</h2>
+    <div class="featured-projects">
+      <div class="project">
+        <!-- <img src="https://via.placeholder.com/400x200/1e293b/60a5fa?text=Vision+Robotic+Arm" alt="Robotic Arm"> -->
+        <h3>Vision-Based Robotic Arm Control</h3>
+        <p>Object placement using Barracio arm with ArUco markers for precise positioning and computer vision tracking.</p>
+        <div class="tags">
+          <span class="tag">Computer Vision</span>
+          <span class="tag">Robotics</span>
+          <span class="tag">ArUco Markers</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/Physic69/Vision-Based-Robotic-Arm-Control-" target="_blank">GitHub</a>
+        </div>
+      </div>
 
+      <div class="project">
+        <!-- <img src="https://via.placeholder.com/400x200/1e293b/60a5fa?text=SmartMapper+SLAM" alt="SmartMapper"> -->
+        <h3>SmartMapper: SLAM vs Dead Reckoning</h3>
+        <p>Comparing Dead Reckoning and SLAM-based localization on mobile devices for accurate indoor navigation.</p>
+        <div class="tags">
+          <span class="tag">SLAM</span>
+          <span class="tag">Mobile Localization</span>
+          <span class="tag">Computer Vision</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/Physic69/SmartMapper" target="_blank">GitHub</a>
+        </div>
+      </div>
 
-    <div class="project">
-      <!-- <img src="https://via.placeholder.com/400x200/1e293b/60a5fa?text=Coding+Platform+DB" alt="Coding Platform"> -->
-      <h3>Coding Platform Database </h3>
-      <p>Database of coding platform.</p>
-      <div class="tags">
-        <span class="tag">PostgreSQL</span>
-        <span class="tag">Database</span>
-        <!-- <span class="tag">IT216</span> -->
-      </div>
-      <div class="project-links">
-        <a href="https://github.com/Physic69/Coding_Platform_DB" target="_blank">GitHub</a>
-      </div>
-    </div>
-
-    <div class="project">
-      <!-- <img src="https://via.placeholder.com/400x200/1e293b/60a5fa?text=System+Programming" alt="Terminal DB"> -->
-      <h3>Terminal Database (WOC7.0)</h3>
-      <p>System programming: Terminal-based database using low-level C.</p>
-      <div class="tags">
-        <span class="tag">C</span>
-        <span class="tag">System Programming</span>
-        <!-- <span class="tag">WOC7.0</span> -->
-      </div>
-      <div class="project-links">
-        <a href="https://github.com/Physic69/woc7.0-system-programming-terminal-database" target="_blank">GitHub</a>
-      </div>
-    </div>
-
-    <div class="project">
-      <!-- <img src="https://via.placeholder.com/400x200/1e293b/60a5fa?text=Vision+Robotic+Arm" alt="Robotic Arm"> -->
-      <h3>Vision-Based Robotic Arm Control</h3>
-      <p>Object placement using Barracio arm with ArUco markers.</p>
-      <div class="tags">
-        <span class="tag">Robotics</span>
-        <span class="tag">Computer Vision</span>
-        <span class="tag">ArUco</span>
-      </div>
-      <div class="project-links">
-        <a href="https://github.com/Physic69/Vision-Based-Robotic-Arm-Control-" target="_blank">GitHub</a>
-      </div>
-    </div>
-
-    <div class="project">
-      <!-- <img src="https://via.placeholder.com/400x200/1e293b/60a5fa?text=SmartMapper" alt="SmartMapper"> -->
-      <h3>SmartMapper: SLAM vs Dead Reckoning</h3>
-      <p>Comparing SLAM-based and Dead Reckoning localization on mobile devices.</p>
-      <div class="tags">
-        <span class="tag">SLAM</span>
-        <span class="tag">Localization</span>
-        <span class="tag">Mobile</span>
-      </div>
-      <div class="project-links">
-        <a href="https://github.com/Physic69/SmartMapper" target="_blank">GitHub</a>
-      </div>
-    </div>
-
-    <div class="project">
+         <div class="project">
       <!-- <img src="https://via.placeholder.com/400x200/1e293b/60a5fa?text=SE+Project" alt="SE Project"> -->
       <h3>Software Engineering Project (IT314)</h3>
       <p>Complete software development lifecycle implementation for semester project.</p>
@@ -149,22 +154,72 @@
         <a href="https://github.com/Physic69/SE_project" target="_blank">GitHub</a>
       </div>
     </div>
-
-        <div class="project">
-      <!-- <img src="https://via.placeholder.com/400x200/1e293b/60a5fa?text=IoT+Project" alt="IoT"> -->
-      <h3>Wanter Tank Monitoring</h3>
-      <p>ESP32-based water tank monitoring system connected to AWS IoT with real-time data visualization on dashboard</p>
-      <div class="tags">
-        <span class="tag">IoT</span>
-        <span class="tag">Embedded</span>
-        <span class="tag">Hardware</span>
-                <span class="tag">AWS</span>
-
-      </div>
-      <div class="project-links">
-        <a href="https://github.com/Physic69/IoT_Project" target="_blank">GitHub</a>
-      </div>
     </div>
+    
+    <div class="view-all">
+      <a href="projects.html" class="view-all-btn">View All Projects →</a>
+    </div>
+  </section>
+
+  <!-- Skills -->
+<section id="skills" class="skills">
+  <div class="skill-card">
+    <h3> Languages</h3>
+    <ul class="skill-list">
+      <li>C, C++</li>
+      <li>Python, Lua</li>
+      <li>PostgreSQL, MATLAB</li>
+      <li>HTML, CSS, TypeScript, JavaScript, React</li>
+    </ul>
+  </div>
+  
+  <div class="skill-card">
+    <h3>Systems & IoT</h3>
+    <ul class="skill-list">
+      <li>Embedded C</li>
+      <li>IoT Systems (ESP32)</li>
+      <li>Linux, Shell</li>
+      <!-- <li>Hardware Integration</li> -->
+    </ul>
+  </div>
+  
+  <div class="skill-card">
+    <h3> Robotics & Vision</h3>
+    <ul class="skill-list">
+      <li>SLAM Algorithms</li>
+      <li>OpenCV, ArUco Markers</li>
+      <li>Controls, Robotics</li>
+      <li>ROS, Gazebo</li>
+    </ul>
+  </div>
+  
+  <div class="skill-card">
+    <h3> Web & DevOps</h3>
+    <ul class="skill-list">
+      <li>Back end Development</li>
+      <!-- <li>Git</li> -->
+      <li>Git, VS Code, neovim</li>
+      <li>Database Design</li>
+    </ul>
+  </div>
+  
+  <div class="skill-card">
+    <h3>Coursework & Interests</h3>
+    <ul class="skill-list">
+      <!-- <li>DBMS, System Programming</li> -->
+      <li>AI/ML, Data Analysis</li>
+      <li> Open source</li>
+      <li>Simulations, Robotics</li>
+    </ul>
+  </div>
+</section>
+
+
+  <!-- About -->
+  <section id="about" class="about">
+    <h2>A bit about me</h2>
+    <p>3rd year ICT student at DAU. Passionate about robotics, computer vision, IoT systems, and backend development. Featured projects showcase SLAM navigation, robotic arm control, and competitive coding platforms.</p>
+    <a href="mailto:you@example.com" class="cta">Get in touch</a>
   </section>
 
   <!-- Footer -->
@@ -173,10 +228,18 @@
       <a href="https://github.com/Physic69" target="_blank">⭐</a>
       <a href="mailto:you@example.com">✉️</a>
     </div>
-    <p>&copy; 2025 L Venkata Subramanyam. Built with ❤️ for fun.</p>
+    <p>&copy; 2025 L Venkata Subramanyam.</p>
   </footer>
 
   <script>
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({behavior: 'smooth'});
+      });
+    });
+    
     // Header scroll effect
     window.addEventListener('scroll', () => {
       document.getElementById('header').classList.toggle('scrolled', window.scrollY > 100);
