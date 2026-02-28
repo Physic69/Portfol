@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | L Venkata Subramanyam</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=Silkscreen:wght@400;700&family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- Background -->
+    <canvas id="particles"></canvas>
+    <div class="bg-grid"></div>
+
+    <!-- Cursor Elements -->
+    <div class="custom-cursor" id="customCursor"></div>
+    <div class="cursor-trail-dot" id="cursorTrail"></div>
+    <canvas id="constellationCanvas"></canvas>
+    <canvas id="shockwaveCanvas"></canvas>
+
+    <!-- Nav Overlay -->
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">LVS<span class="dot">_</span></a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html#about" onclick="closeNav()">About</a></li>
+                <li><a href="index.html#skills" onclick="closeNav()">Skills</a></li>
+                <li><a href="projects.html" onclick="closeNav()">Projects</a></li>
+                <li><a href="contact.html" class="active" onclick="closeNav()" class="nav-cta">Contact</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" onclick="toggleNav()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <!-- EDUCATION -->
+        <section class="education" id="education" style="padding-top: 120px;">
+            <div class="container">
+                <div class="section-header reveal">
+                    <div class="section-label">Education</div>
+                    <h2 class="section-title">Academic Path</h2>
+                </div>
+                <div class="education-card reveal">
+                    <div class="education-card-top"></div>
+                    <div class="education-card-dirt"></div>
+                    <div class="education-card-content">
+                        <div class="education-header">
+                            <div class="education-icon">
+                                <div class="education-icon-text">DA<br>IICT</div>
+                            </div>
+                            <div class="education-info">
+                                <h3>Dhirubhai Ambani Institute of ICT</h3>
+                                <div class="degree">B.Tech in Information & Communication Technology</div>
+                                <div class="year">2023 - 2027 | 3rd Year</div>
+                            </div>
+                        </div>
+                        <div class="education-details">
+                            <p>
+                                Studying a comprehensive curriculum spanning computer science,
+                                electronics, and communication systems. Actively building projects
+                                in kernel development, IoT, robotics, and open-source contributions.
+                            </p>
+                            <div class="coursework-tags">
+                                <span class="coursework-tag">Computer System Programming</span>
+                                <span class="coursework-tag">Operating Systems</span>
+                                <span class="coursework-tag">DBMS</span>
+                                <span class="coursework-tag">DLCO</span>
+                                <span class="coursework-tag">Intro to Robotics</span>
+                                <span class="coursework-tag">Embedded Hardware Design</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section class="contact" id="contact">
+            <div class="container">
+                <div class="section-header reveal">
+                    <div class="section-label">Get In Touch</div>
+                    <h2 class="section-title">Let's Connect</h2>
+                </div>
+                <div class="contact-content reveal">
+                    <p class="contact-text">
+                        I'm always excited to discuss new opportunities, interesting projects,
+                        or anything related to systems programming, kernel dev, and robotics.
+                        Drop me a line 😊
+                    </p>
+                    <div class="contact-links">
+                        <a href="mailto:lvenkatsubramanyam@gmail.com" class="contact-link">
+                            <span class="contact-icon" style="color: var(--redstone-red);">@</span>
+                            <div>
+                                <div>Email</div>
+                                <div class="contact-link-label">lvenkatsubramanyam@gmail.com</div>
+                            </div>
+                        </a>
+                        <a href="https://github.com/Physic69" target="_blank" class="contact-link">
+                            <span class="contact-icon" style="color: var(--text-primary);">GH</span>
+                            <div>
+                                <div>GitHub</div>
+                                <div class="contact-link-label">Physic69</div>
+                            </div>
+                        </a>
+                        <a href="https://www.linkedin.com/in/lingampalli-venkata-subramanyam/" target="_blank" class="contact-link">
+                            <span class="contact-icon" style="color: var(--lapis-blue);">in</span>
+                            <div>
+                                <div>LinkedIn</div>
+                                <div class="contact-link-label">Venkata Subramanyam</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-dirt"></div>
+        <p class="footer-text">
+            Crafted with <span class="heart">&#9829;</span> by L Venkata Subramanyam | 2026
+        </p>
+        <p class="footer-craft">BLOCK BY BLOCK</p>
+    </footer>
+
+    <script src="js/cursor.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

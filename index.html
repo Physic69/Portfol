@@ -10,7 +10,6 @@
 </head>
 <body>
     <!-- Background -->
-     
     <canvas id="particles"></canvas>
     <div class="bg-grid"></div>
 
@@ -26,14 +25,12 @@
     <!-- Navbar -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="#" class="nav-logo">LVS<span class="dot">_</span></a>
+            <a href="index.html" class="nav-logo">LVS<span class="dot">_</span></a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#about" onclick="closeNav()">About</a></li>
                 <li><a href="#skills" onclick="closeNav()">Skills</a></li>
-                <li><a href="#projects" onclick="closeNav()">Projects</a></li>
-                <li><a href="#achievements" onclick="closeNav()">Achievements</a></li>
-                <li><a href="#education" onclick="closeNav()">Education</a></li>
-                <li><a href="#contact" onclick="closeNav()" class="nav-cta">Contact</a></li>
+                <li><a href="projects.html" onclick="closeNav()">Projects</a></li>
+                <li><a href="contact.html" onclick="closeNav()" class="nav-cta">Contact</a></li>
             </ul>
             <button class="hamburger" id="hamburger" onclick="toggleNav()">
                 <span></span>
@@ -64,7 +61,7 @@
                             I'm probably having fun with it 😄
                         </p>
                         <div class="hero-buttons">
-                            <a href="#projects" class="btn btn-primary">View Projects</a>
+                            <a href="projects.html" class="btn btn-primary">View Projects</a>
                             <a href="https://github.com/Physic69" target="_blank" class="btn btn-outline">GitHub</a>
                             <a href="#" class="btn btn-outline" id="resumeBtn">Resume</a>
                         </div>
@@ -206,10 +203,10 @@
                         <div class="skill-tags">
                             <span class="skill-tag">C</span>
                             <span class="skill-tag">C++</span>
-                            <span class="skill-tag">Python</span>
-                            <span class="skill-tag">Lua</span>
-                            <span class="skill-tag">SQL</span>
-                            <span class="skill-tag">MATLAB</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Lua</span>
+                            <span class="tech-tag">SQL</span>
+                            <span class="tech-tag">MATLAB</span>
                         </div>
                     </div>
                     <div class="skill-category reveal reveal-delay-2">
@@ -290,464 +287,13 @@
                 </div>
             </div>
         </section>
-
-        <!-- PROJECTS -->
-        <section class="projects" id="projects">
-            <div class="container">
-                <div class="section-header reveal">
-                    <div class="section-label">My Work</div>
-                    <h2 class="section-title">Projects</h2>
-                    <p class="section-subtitle">Things I've built, broken, and shipped.</p>
-                </div>
-                <div class="projects-filter reveal">
-                    <button class="filter-btn active" onclick="filterProjects('all', this)">All</button>
-                    <button class="filter-btn" onclick="filterProjects('systems', this)">Systems</button>
-                    <button class="filter-btn" onclick="filterProjects('iot', this)">IoT & Robotics</button>
-                    <button class="filter-btn" onclick="filterProjects('web', this)">Web / DB</button>
-                    <button class="filter-btn" onclick="filterProjects('research', this)">Research</button>
-                </div>
-                <div class="projects-grid" id="projectsGrid">
-
-                    <!-- 1. Lunatik -->
-                    <div class="project-card reveal" data-category="systems">
-                        <div class="project-card-top-bar"></div>
-                        <div class="project-featured-badge">FEATURED</div>
-                        <div class="project-card-header">
-                            <div class="project-icon-box">
-                                <span class="project-icon-char" style="color: var(--diamond-blue);">K</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/luainkernel/lunatik/commits/master/?author=Physic69" target="_blank" class="project-link" title="GitHub">
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="project-card-body">
-                            <h3 class="project-title">Lunatik - Linux Kernel Contributions</h3>
-                            <p class="project-description">
-                                Implemented kernel-space signal handling functions (kill, sigpending,
-                                sigprocmask) exposing Linux kernel syscalls to Lua scripts running
-                                in kernel mode. Set up CI/CD pipeline and improved memory safety
-                                in the luadata module.
-                            </p>
-                        </div>
-                        <div class="project-card-footer">
-                            <div class="project-tech">
-                                <span class="tech-tag">C</span>
-                                <span class="tech-tag">Lua</span>
-                                <span class="tech-tag">Linux Kernel</span>
-                                <span class="tech-tag">GitHub Actions</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 2. Robotic Arm -->
-                    <div class="project-card reveal reveal-delay-1" data-category="iot">
-                        <div class="project-card-top-bar"></div>
-                        <div class="project-featured-badge">FEATURED</div>
-                        <div class="project-card-header">
-                            <div class="project-icon-box">
-                                <span class="project-icon-char" style="color: var(--redstone-red);">R</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/Physic69/Vision-Based-Robotic-Arm-Control-" target="_blank" class="project-link">
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="project-card-body">
-                            <h3 class="project-title">Vision-Based Robotic Arm Control</h3>
-                            <p class="project-description">
-                                Autonomous Braccio robotic arm that detects and manipulates objects
-                                using ArUco markers, computer vision, and inverse kinematics.
-                                Python controls communicate with Arduino while a camera
-                                tracks marker positions in real-time.
-                            </p>
-                        </div>
-                        <div class="project-card-footer">
-                            <div class="project-tech">
-                                <span class="tech-tag">Python</span>
-                                <span class="tech-tag">OpenCV</span>
-                                <span class="tech-tag">Arduino</span>
-                                <span class="tech-tag">Kinematics</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 3. IoT -->
-                    <div class="project-card reveal reveal-delay-2" data-category="iot">
-                        <div class="project-card-top-bar"></div>
-                        <div class="project-featured-badge">FEATURED</div>
-                        <div class="project-card-header">
-                            <div class="project-icon-box">
-                                <span class="project-icon-char" style="color: var(--emerald-green);">I</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/Physic69/IoT_Project" target="_blank" class="project-link">
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="project-card-body">
-                            <h3 class="project-title">IoT Sensor System with AWS</h3>
-                            <p class="project-description">
-                                End-to-end IoT pipeline using ESP32 and sensors connected to
-                                AWS cloud with battery optimization. Sensor data is visualized
-                                in real-time through a web dashboard.
-                            </p>
-                        </div>
-                        <div class="project-card-footer">
-                            <div class="project-tech">
-                                <span class="tech-tag">ESP32</span>
-                                <span class="tech-tag">AWS</span>
-                                <span class="tech-tag">Sensors</span>
-                                <span class="tech-tag">Web Dashboard</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 4. TCP DB -->
-                    <div class="project-card reveal reveal-delay-3" data-category="systems">
-                        <div class="project-card-top-bar"></div>
-                        <div class="project-featured-badge">FEATURED</div>
-                        <div class="project-card-header">
-                            <div class="project-icon-box">
-                                <span class="project-icon-char" style="color: var(--gold-yellow);">T</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/Physic69/woc7.0-system-programming-terminal-database" target="_blank" class="project-link">
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="project-card-body">
-                            <h3 class="project-title">TCP Terminal Database System</h3>
-                            <p class="project-description">
-                                TCP socket-based client-server application in C++ enabling
-                                command-line database operations with persistent binary file
-                                storage, efficient data retrieval, and real-time server responses.
-                            </p>
-                        </div>
-                        <div class="project-card-footer">
-                            <div class="project-tech">
-                                <span class="tech-tag">C++</span>
-                                <span class="tech-tag">TCP Sockets</span>
-                                <span class="tech-tag">Binary I/O</span>
-                                <span class="tech-tag">Client-Server</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 5. LDPC -->
-                    <div class="project-card reveal" data-category="research">
-                        <div class="project-card-top-bar"></div>
-                        <div class="project-featured-badge">FEATURED</div>
-                        <div class="project-card-header">
-                            <div class="project-icon-box">
-                                <span class="project-icon-char" style="color: var(--lapis-blue);">5</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/Physic69/LDPC-Code_Simulation_for_5G_NR" target="_blank" class="project-link">
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="project-card-body">
-                            <h3 class="project-title">LDPC Code Simulation for 5G NR</h3>
-                            <p class="project-description">
-                                Simulated LDPC codes under various code rates and decoding
-                                techniques. Sum-Product decoding showed near-optimal performance.
-                                Validates LDPC effectiveness for reliable 5G NR communication.
-                            </p>
-                        </div>
-                        <div class="project-card-footer">
-                            <div class="project-tech">
-                                <span class="tech-tag">MATLAB</span>
-                                <span class="tech-tag">5G NR</span>
-                                <span class="tech-tag">LDPC</span>
-                                <span class="tech-tag">Signal Processing</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 6. SmartMapper -->
-                    <div class="project-card reveal reveal-delay-1" data-category="research">
-                        <div class="project-card-top-bar"></div>
-                        <div class="project-card-header">
-                            <div class="project-icon-box">
-                                <span class="project-icon-char" style="color: var(--obsidian-purple);">M</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/Physic69/SmartMapper" target="_blank" class="project-link">
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="project-card-body">
-                            <h3 class="project-title">SmartMapper - SLAM vs Dead Reckoning</h3>
-                            <p class="project-description">
-                                Comparing Dead Reckoning and SLAM-based localization on mobile
-                                devices. Evaluating accuracy, drift, and real-world applicability
-                                of different indoor positioning approaches.
-                            </p>
-                        </div>
-                        <div class="project-card-footer">
-                            <div class="project-tech">
-                                <span class="tech-tag">SLAM</span>
-                                <span class="tech-tag">Mobile Dev</span>
-                                <span class="tech-tag">Sensors</span>
-                                <span class="tech-tag">Localization</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 7. Kernel Process -->
-                    <div class="project-card reveal reveal-delay-2" data-category="systems">
-                        <div class="project-card-top-bar"></div>
-                        <div class="project-card-header">
-                            <div class="project-icon-box">
-                                <span class="project-icon-char" style="color: var(--diamond-blue);">D</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://gist.github.com/Physic69/b718061e729bcf6ca1083ba87a6ba4bc" target="_blank" class="project-link">
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="project-card-body">
-                            <h3 class="project-title">Linux Kernel Process Reference</h3>
-                            <p class="project-description">
-                                Comprehensive reference covering process states, wait queues,
-                                task_struct, CFS scheduling, and kernel synchronization.
-                                Includes eBPF-based debugging for D-state hangs.
-                            </p>
-                        </div>
-                        <div class="project-card-footer">
-                            <div class="project-tech">
-                                <span class="tech-tag">Linux Kernel</span>
-                                <span class="tech-tag">eBPF</span>
-                                <span class="tech-tag">CFS</span>
-                                <span class="tech-tag">Documentation</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 8. Coding Platform DB -->
-                    <div class="project-card reveal reveal-delay-3" data-category="web">
-                        <div class="project-card-top-bar"></div>
-                        <div class="project-card-header">
-                            <div class="project-icon-box">
-                                <span class="project-icon-char" style="color: var(--emerald-green);">Q</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/Physic69/Coding_Platform_DB" target="_blank" class="project-link">
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="project-card-body">
-                            <h3 class="project-title">Coding Platform Database</h3>
-                            <p class="project-description">
-                                Relational database system for an online coding platform
-                                supporting user management, problem storage, contest hosting,
-                                and submission tracking with optimized queries.
-                            </p>
-                        </div>
-                        <div class="project-card-footer">
-                            <div class="project-tech">
-                                <span class="tech-tag">SQL</span>
-                                <span class="tech-tag">PostgreSQL</span>
-                                <span class="tech-tag">ER Design</span>
-                                <span class="tech-tag">Normalization</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 9. Social Media -->
-                    <div class="project-card reveal" data-category="web">
-                        <div class="project-card-top-bar"></div>
-                        <div class="project-card-header">
-                            <div class="project-icon-box">
-                                <span class="project-icon-char" style="color: var(--redstone-red);">S</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/Physic69/SE_project" target="_blank" class="project-link">
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="project-card-body">
-                            <h3 class="project-title">Social Media Platform</h3>
-                            <p class="project-description">
-                                Full-stack social media application built as a Software Engineering
-                                project. Features user profiles, posts, interactions, and a
-                                responsive interface.
-                            </p>
-                        </div>
-                        <div class="project-card-footer">
-                            <div class="project-tech">
-                                <span class="tech-tag">Full Stack</span>
-                                <span class="tech-tag">JavaScript</span>
-                                <span class="tech-tag">Database</span>
-                                <span class="tech-tag">REST API</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 10. Binary Search -->
-                    <div class="project-card reveal reveal-delay-1" data-category="web">
-                        <div class="project-card-top-bar"></div>
-                        <div class="project-card-header">
-                            <div class="project-icon-box">
-                                <span class="project-icon-char" style="color: var(--gold-yellow);">B</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/Physic69/Bin_Sear" target="_blank" class="project-link">
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="project-card-body">
-                            <h3 class="project-title">Binary Search Visualizer</h3>
-                            <p class="project-description">
-                                Interactive visualization tool for binary search algorithm,
-                                helping users understand the step-by-step process with
-                                animated visuals.
-                            </p>
-                        </div>
-                        <div class="project-card-footer">
-                            <div class="project-tech">
-                                <span class="tech-tag">JavaScript</span>
-                                <span class="tech-tag">Visualization</span>
-                                <span class="tech-tag">Algorithms</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ACHIEVEMENTS -->
-        <section class="achievements" id="achievements">
-            <div class="container">
-                <div class="section-header reveal">
-                    <div class="section-label">Achievements</div>
-                    <h2 class="section-title">Milestones</h2>
-                    <p class="section-subtitle">Accomplishments along the way.</p>
-                </div>
-                <div class="achievements-grid">
-                    <div class="achievement-card reveal reveal-delay-1">
-                        <div class="achievement-title">Winter of Code - MW Position</div>
-                        <div class="achievement-desc">
-                            Achieved MW position in Winter of Code in the Computer System
-                            Programming Track. Worked on real kernel-level and systems projects.
-                        </div>
-                    </div>
-                    <div class="achievement-card reveal reveal-delay-2">
-                        <div class="achievement-title">Gazebo - Top Contributor</div>
-                        <div class="achievement-desc">
-                            Recognized as top contributor in the Gazebo Jetty Tutorial
-                            Testing Party. Helped validate and improve robotics simulation docs.
-                        </div>
-                    </div>
-                    <div class="achievement-card reveal reveal-delay-3">
-                        <div class="achievement-title">JEE Mains - 98.67 %ile</div>
-                        <div class="achievement-desc">
-                            Scored 98.67 percentile in JEE Mains with an All India Rank
-                            of 15514 among over a million candidates.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- EDUCATION -->
-        <section class="education" id="education">
-            <div class="container">
-                <div class="section-header reveal">
-                    <div class="section-label">Education</div>
-                    <h2 class="section-title">Academic Path</h2>
-                </div>
-                <div class="education-card reveal">
-                    <div class="education-card-top"></div>
-                    <div class="education-card-dirt"></div>
-                    <div class="education-card-content">
-                        <div class="education-header">
-                            <div class="education-icon">
-                                <div class="education-icon-text">DA<br>IICT</div>
-                            </div>
-                            <div class="education-info">
-                                <h3>Dhirubhai Ambani Institute of ICT</h3>
-                                <div class="degree">B.Tech in Information & Communication Technology</div>
-                                <div class="year">2022 - 2026 | 3rd Year</div>
-                            </div>
-                        </div>
-                        <div class="education-details">
-                            <p>
-                                Studying a comprehensive curriculum spanning computer science,
-                                electronics, and communication systems. Actively building projects
-                                in kernel development, IoT, robotics, and open-source contributions.
-                            </p>
-                            <div class="coursework-tags">
-                                <span class="coursework-tag">Computer System Programming</span>
-                                <span class="coursework-tag">Operating Systems</span>
-                                <span class="coursework-tag">DBMS</span>
-                                <span class="coursework-tag">DLCO</span>
-                                <span class="coursework-tag">Intro to Robotics</span>
-                                <span class="coursework-tag">Embedded Hardware Design</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CONTACT -->
-        <section class="contact" id="contact">
-            <div class="container">
-                <div class="section-header reveal">
-                    <div class="section-label">Get In Touch</div>
-                    <h2 class="section-title">Let's Connect</h2>
-                </div>
-                <div class="contact-content reveal">
-                    <p class="contact-text">
-                        I'm always excited to discuss new opportunities, interesting projects,
-                        or anything related to systems programming, kernel dev, and robotics.
-                        Drop me a line 😊
-                    </p>
-                    <div class="contact-links">
-                        <a href="mailto:lvenkatsubramanyam@gmail.com" class="contact-link">
-                            <span class="contact-icon" style="color: var(--redstone-red);">@</span>
-                            <div>
-                                <div>Email</div>
-                                <div class="contact-link-label">lvenkatsubramanyam@gmail.com</div>
-                            </div>
-                        </a>
-                        <a href="https://github.com/Physic69" target="_blank" class="contact-link">
-                            <span class="contact-icon" style="color: var(--text-primary);">GH</span>
-                            <div>
-                                <div>GitHub</div>
-                                <div class="contact-link-label">Physic69</div>
-                            </div>
-                        </a>
-                        <a href="https://www.linkedin.com/in/lingampalli-venkata-subramanyam/" target="_blank" class="contact-link">
-                            <span class="contact-icon" style="color: var(--lapis-blue);">in</span>
-                            <div>
-                                <div>LinkedIn</div>
-                                <div class="contact-link-label">Venkata Subramanyam</div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
     </main>
 
     <!-- Footer -->
     <footer>
         <div class="footer-dirt"></div>
         <p class="footer-text">
-            Crafted with <span class="heart">&#9829;</span> by L Venkata Subramanyam | 2025
+            Crafted with <span class="heart">&#9829;</span> by L Venkata Subramanyam | 2026
         </p>
         <p class="footer-craft">BLOCK BY BLOCK</p>
     </footer>
