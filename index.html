@@ -1,249 +1,761 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>L Venkata Subramanyam | Portfolio</title>
-  <style>
-    *{margin:0;padding:0;box-sizing:border-box;}
-    body{font-family:system-ui,-apple-system,sans-serif;background:#0a0e1a;color:#e2e8f0;line-height:1.6;overflow-x:hidden;}
-    
-    /* Header */
-    header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(10,14,26,.95);backdrop-filter:blur(10px);padding:1rem 0;transition:all .3s;}
-    header.scrolled{background:#0a0e1a!important;}
-    nav{max-width:1200px;margin:0 auto;padding:0 2rem;display:flex;justify-content:space-between;align-items:center;}
-    .logo{font-size:1.5rem;font-weight:700;letter-spacing:.05em;color:#60a5fa;}
-    nav ul{display:flex;gap:2rem;list-style:none;}
-    nav a{color:#94a3b8;text-decoration:none;font-weight:500;transition:color .3s;}
-    nav a:hover{color:#60a5fa;}
-    
-    /* Hero */
-    .hero{min-height:100vh;background:linear-gradient(135deg,#0a0e1a 0%,#1e293b 100%);display:flex;align-items:center;justify-content:center;text-align:center;padding:0 2rem;position:relative;overflow:hidden;}
-    .hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.05)"/><circle cx="75" cy="75" r="1.5" fill="rgba(255,255,255,0.03)"/><circle cx="50" cy="10" r="0.8" fill="rgba(255,255,255,0.04)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');}
-    .hero-content{max-width:800px;}
-    .hero h1{font-size:clamp(3rem,8vw,6rem);font-weight:800;margin-bottom:1rem;background:linear-gradient(135deg,#60a5fa,#a78bfa);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-    .hero h2{font-size:1.5rem;color:#94a3b8;margin-bottom:2rem;font-weight:400;}
-    .hero p{font-size:1.2rem;max-width:600px;margin:0 auto 2rem;color:#cbd5e1;}
-    .cta{display:inline-block;padding:1rem 2.5rem;background:linear-gradient(135deg,#60a5fa,#3b82f6);color:white;border-radius:50px;font-weight:600;font-size:1.1rem;text-decoration:none;transition:all .3s;box-shadow:0 10px 30px rgba(96,165,250,.3);}
-    .cta:hover{transform:translateY(-3px);box-shadow:0 15px 40px rgba(96,165,250,.4);}
-    
-    /* Featured Projects */
-    .featured{padding:6rem 2rem;max-width:1200px;margin:0 auto;}
-    .featured h2{font-size:3rem;font-weight:700;text-align:center;margin-bottom:3rem;color:#f1f5f9;}
-    .featured-projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:2rem;}
-    .project{background:linear-gradient(145deg,#1e293b,#334155);border-radius:20px;padding:2rem;overflow:hidden;position:relative;transition:transform .3s;border:1px solid rgba(96,165,250,.1);}
-    .project:hover{transform:translateY(-10px);}
-    .project img{width:100%;height:200px;object-fit:cover;border-radius:12px;margin-bottom:1.5rem;}
-    .project h3{font-size:1.5rem;margin-bottom:1rem;color:#f1f5f9;}
-    .project p{color:#cbd5e1;margin-bottom:1.5rem;line-height:1.7;}
-    .tags{display:flex;flex-wrap:wrap;gap:.5rem;}
-    .tag{background:rgba(96,165,250,.2);color:#60a5fa;padding:.3rem .8rem;border-radius:20px;font-size:.85rem;font-weight:500;}
-    .project-links{display:flex;gap:1rem;margin-top:1.5rem;flex-wrap:wrap;}
-    .project-links a{color:#60a5fa;text-decoration:none;font-weight:500;font-size:.9rem;}
-    
-    /* View All Button */
-    .view-all{text-align:center;margin:4rem 0;}
-    .view-all-btn{display:inline-block;padding:1.2rem 3rem;background:linear-gradient(135deg,#10b981,#059669);color:white;border-radius:50px;font-weight:700;font-size:1.2rem;text-decoration:none;transition:all .3s;box-shadow:0 10px 30px rgba(16,185,129,.3);}
-    .view-all-btn:hover{transform:translateY(-3px);box-shadow:0 15px 40px rgba(16,185,129,.4);}
-    
-    /* Skills */
-    .skills{padding:6rem 2rem;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem;}
-    .skill-card{background:linear-gradient(145deg,#1e293b,#334155);border-radius:20px;padding:2.5rem;text-align:center;border:1px solid rgba(96,165,250,.1);}
-    .skill-card h3{font-size:1.3rem;margin-bottom:1rem;color:#f1f5f9;}
-    .skill-list{list-style:none;}
-    .skill-list li{color:#cbd5e1;margin-bottom:.5rem;}
-    /* Add this to your existing styles */
-.skills {
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-}
-@media (max-width: 768px) {
-  .skills {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-}
-
-    /* About */
-    .about{padding:6rem 2rem;max-width:800px;margin:0 auto;text-align:center;}
-    .about h2{font-size:3rem;font-weight:700;margin-bottom:2rem;color:#f1f5f9;}
-    .about p{font-size:1.1rem;color:#cbd5e1;line-height:1.8;max-width:700px;margin:0 auto 2rem;}
-    
-    /* Footer */
-    footer{background:#0a0e1a;padding:3rem 2rem;text-align:center;border-top:1px solid #1e293b;}
-    .social{display:flex;justify-content:center;gap:2rem;margin-bottom:1rem;}
-    .social a{color:#94a3b8;font-size:1.5rem;transition:color .3s;}
-    .social a:hover{color:#60a5fa;}
-    
-    @media (max-width:768px){
-      nav{padding:0 1rem;}
-      nav ul{gap:1rem;font-size:.9rem;}
-      .featured,.skills,.about{padding:4rem 1rem;}
-      .featured h2{font-size:2rem;}
-      .project-links{flex-direction:column;}
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L Venkata Subramanyam | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=Silkscreen:wght@400;700&family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
-  <!-- Header -->
-  <header id="header">
-    <nav>
-      <div class="logo">L Venkata Subramanyam</div>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+    <!-- Background -->
+     
+    <canvas id="particles"></canvas>
+    <div class="bg-grid"></div>
+
+    <!-- Cursor Elements -->
+    <div class="custom-cursor" id="customCursor"></div>
+    <div class="cursor-trail-dot" id="cursorTrail"></div>
+    <canvas id="constellationCanvas"></canvas>
+    <canvas id="shockwaveCanvas"></canvas>
+
+    <!-- Nav Overlay -->
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">LVS<span class="dot">_</span></a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about" onclick="closeNav()">About</a></li>
+                <li><a href="#skills" onclick="closeNav()">Skills</a></li>
+                <li><a href="#projects" onclick="closeNav()">Projects</a></li>
+                <li><a href="#achievements" onclick="closeNav()">Achievements</a></li>
+                <li><a href="#education" onclick="closeNav()">Education</a></li>
+                <li><a href="#contact" onclick="closeNav()" class="nav-cta">Contact</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" onclick="toggleNav()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
     </nav>
-  </header>
 
-  <!-- Hero -->
-  <section id="home" class="hero">
-    <div class="hero-content">
-      <h1>L Venkata Subramanyam</h1>
-      <h2>3rd Year ICT @ DAU</h2>
-      <p>Building IoT systems, robotics, web, mobile apps & system programming.<br></p>
-      <a href="#featured" class="cta">Featured Projects</a>
-    </div>
-  </section>
+    <main>
+        <!-- HERO -->
+        <section class="hero" id="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <div class="hero-badge">
+                            <span class="status-dot"></span>
+                            Open to Opportunities
+                        </div>
+                        <h1>
+                            <span class="line1">Hey, Myself</span>
+                            <span class="name">Venkata Subramanyam</span>
+                        </h1>
+                        <p class="hero-subtitle">Systems Programmer / Kernel Dev / Robotics</p>
+                        <p class="hero-description">
+                            I love going deep into systems — from writing Linux kernel modules
+                            to building robotic arms that see. If it runs close to the metal,
+                            I'm probably having fun with it 😄
+                        </p>
+                        <div class="hero-buttons">
+                            <a href="#projects" class="btn btn-primary">View Projects</a>
+                            <a href="https://github.com/Physic69" target="_blank" class="btn btn-outline">GitHub</a>
+                            <a href="#" class="btn btn-outline" id="resumeBtn">Resume</a>
+                        </div>
+                        <div class="hero-stats">
+                            <div class="stat">
+                                <div class="stat-number">10+</div>
+                                <div class="stat-label">Projects</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">5+</div>
+                                <div class="stat-label">Domains</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">OSS</div>
+                                <div class="stat-label">Contributor</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero-visual">
+                        <div class="hero-card">
+                            <div class="hero-card-top"></div>
+                            <div class="hero-card-dirt"></div>
+                            <div class="hero-card-content">
+                                <div class="terminal-header">
+                                    <span class="terminal-title">player_data.lua</span>
+                                    <div class="terminal-dots">
+                                        <div class="terminal-dot red"></div>
+                                        <div class="terminal-dot yellow"></div>
+                                        <div class="terminal-dot green"></div>
+                                    </div>
+                                </div>
+                                <div class="terminal-body">
+                                    <div class="terminal-line">
+                                        <span class="t-prompt">></span>
+                                        <span>cat player.json</span>
+                                    </div>
+                                    <div class="terminal-line">
+                                        <span class="t-key">"name"</span>:
+                                        <span class="t-string">"L Venkata Subramanyam"</span>
+                                    </div>
+                                    <div class="terminal-line">
+                                        <span class="t-key">"class"</span>:
+                                        <span class="t-string">"Systems Programmer"</span>
+                                    </div>
+                                    <div class="terminal-line">
+                                        <span class="t-key">"guild"</span>:
+                                        <span class="t-string">"DA-IICT"</span>
+                                    </div>
+                                    <div class="terminal-line">
+                                        <span class="t-key">"skills"</span>:
+                                        <span class="t-bracket">[</span><span class="t-value">"Kernel", "IoT", "Robotics"</span><span class="t-bracket">]</span>
+                                    </div>
+                                    <div class="terminal-line">
+                                        <span class="t-key">"oss"</span>:
+                                        <span class="t-value">true</span>
+                                    </div>
+                                    <div class="terminal-line">
+                                        <span class="t-prompt">></span>
+                                        <span class="terminal-cursor"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <!-- Featured Projects (3 top projects) -->
-  <section id="featured" class="featured">
-    <h2>Featured Projects</h2>
-    <div class="featured-projects">
-      <div class="project">
-        <!-- <img src="https://via.placeholder.com/400x200/1e293b/60a5fa?text=Vision+Robotic+Arm" alt="Robotic Arm"> -->
-        <h3>Vision-Based Robotic Arm Control</h3>
-        <p>Object placement using Barracio arm with ArUco markers for precise positioning and computer vision tracking.</p>
-        <div class="tags">
-          <span class="tag">Computer Vision</span>
-          <span class="tag">Robotics</span>
-          <span class="tag">ArUco Markers</span>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/Physic69/Vision-Based-Robotic-Arm-Control-" target="_blank">GitHub</a>
-        </div>
-      </div>
+        <!-- ABOUT -->
+        <section class="about" id="about">
+            <div class="container">
+                <div class="section-header reveal">
+                    <div class="section-label">About Me</div>
+                    <h2 class="section-title">Who I Am</h2>
+                    <p class="section-subtitle">A curious engineer who loves building across the entire stack.</p>
+                </div>
+                <div class="about-grid">
+                    <div class="about-image-container reveal">
+                        <div class="about-avatar">
+                            <div class="about-avatar-top"></div>
+                            <img id="profile-img" src="" alt="L Venkata Subramanyam" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div class="about-floating-tag">Kernel Dev</div>
+                        <div class="about-floating-tag">Robotics</div>
+                    </div>
+                    <div class="about-text reveal reveal-delay-2">
+                        <h3>Building at every layer</h3>
+                        <p>
+                            Hey, Myself Venkat 😊 I'm a 3rd year B.Tech ICT student at
+                            Dhirubhai Ambani Institute of ICT. I love robotics, low-level kernel
+                            system programming, and anything that runs close to hardware.
+                        </p>
+                        <p>
+                            From contributing kernel-space signal handlers to the Lunatik open-source
+                            project, to building IoT pipelines on AWS, to making a Braccio robotic arm
+                            pick up objects autonomously — I thrive on diverse, deep challenges.
+                        </p>
+                        <div class="about-highlights">
+                            <div class="highlight-item">
+                                <span class="highlight-marker"></span> Linux Kernel
+                            </div>
+                            <div class="highlight-item">
+                                <span class="highlight-marker"></span> IoT & Embedded
+                            </div>
+                            <div class="highlight-item">
+                                <span class="highlight-marker"></span> Robotics & CV
+                            </div>
+                            <div class="highlight-item">
+                                <span class="highlight-marker"></span> Systems Programming
+                            </div>
+                            <div class="highlight-item">
+                                <span class="highlight-marker"></span> 5G / Telecom
+                            </div>
+                            <div class="highlight-item">
+                                <span class="highlight-marker"></span> Database Systems
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-      <div class="project">
-        <!-- <img src="https://via.placeholder.com/400x200/1e293b/60a5fa?text=SmartMapper+SLAM" alt="SmartMapper"> -->
-        <h3>SmartMapper: SLAM vs Dead Reckoning</h3>
-        <p>Comparing Dead Reckoning and SLAM-based localization on mobile devices for accurate indoor navigation.</p>
-        <div class="tags">
-          <span class="tag">SLAM</span>
-          <span class="tag">Mobile Localization</span>
-          <span class="tag">Computer Vision</span>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/Physic69/SmartMapper" target="_blank">GitHub</a>
-        </div>
-      </div>
+        <!-- SKILLS -->
+        <section class="skills" id="skills">
+            <div class="container">
+                <div class="section-header reveal">
+                    <div class="section-label">Tech Stack</div>
+                    <h2 class="section-title">Skills & Tools</h2>
+                    <p class="section-subtitle">The inventory I carry into every build.</p>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-category reveal reveal-delay-1">
+                        <div class="skill-category-header">
+                            <div class="skill-category-icon">
+                                <span class="skill-icon-char" style="color: var(--diamond-blue);">C</span>
+                            </div>
+                            <div class="skill-category-title">Languages</div>
+                        </div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">C</span>
+                            <span class="skill-tag">C++</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Lua</span>
+                            <span class="skill-tag">SQL</span>
+                            <span class="skill-tag">MATLAB</span>
+                        </div>
+                    </div>
+                    <div class="skill-category reveal reveal-delay-2">
+                        <div class="skill-category-header">
+                            <div class="skill-category-icon">
+                                <span class="skill-icon-char" style="color: var(--redstone-red);">K</span>
+                            </div>
+                            <div class="skill-category-title">Systems & Kernel</div>
+                        </div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Linux Kernel Modules</span>
+                            <span class="skill-tag">Process Signals</span>
+                            <span class="skill-tag">Syscall Interfaces</span>
+                            <span class="skill-tag">POSIX APIs</span>
+                            <span class="skill-tag">TCP Sockets</span>
+                        </div>
+                    </div>
+                    <div class="skill-category reveal reveal-delay-3">
+                        <div class="skill-category-header">
+                            <div class="skill-category-icon">
+                                <span class="skill-icon-char" style="color: var(--emerald-green);">T</span>
+                            </div>
+                            <div class="skill-category-title">Developer Tools</div>
+                        </div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">GitHub Actions</span>
+                            <span class="skill-tag">Linux Shell</span>
+                            <span class="skill-tag">Neovim</span>
+                            <span class="skill-tag">VS Code</span>
+                            <span class="skill-tag">GDB</span>
+                        </div>
+                    </div>
+                    <div class="skill-category reveal reveal-delay-4">
+                        <div class="skill-category-header">
+                            <div class="skill-category-icon">
+                                <span class="skill-icon-char" style="color: var(--gold-yellow);">S</span>
+                            </div>
+                            <div class="skill-category-title">Simulation & Design</div>
+                        </div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Gazebo</span>
+                            <span class="skill-tag">Fusion 360 (CAD)</span>
+                            <span class="skill-tag">OpenCV</span>
+                            <span class="skill-tag">ArUco Markers</span>
+                        </div>
+                    </div>
+                    <div class="skill-category reveal reveal-delay-1">
+                        <div class="skill-category-header">
+                            <div class="skill-category-icon">
+                                <span class="skill-icon-char" style="color: var(--lapis-blue);">E</span>
+                            </div>
+                            <div class="skill-category-title">Embedded & IoT</div>
+                        </div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">ESP32</span>
+                            <span class="skill-tag">Arduino</span>
+                            <span class="skill-tag">AWS IoT</span>
+                            <span class="skill-tag">SLAM</span>
+                            <span class="skill-tag">eBPF</span>
+                        </div>
+                    </div>
+                    <div class="skill-category reveal reveal-delay-2">
+                        <div class="skill-category-header">
+                            <div class="skill-category-icon">
+                                <span class="skill-icon-char" style="color: var(--obsidian-purple);">A</span>
+                            </div>
+                            <div class="skill-category-title">Areas of Interest</div>
+                        </div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Kernel Dev</span>
+                            <span class="skill-tag">Filesystems</span>
+                            <span class="skill-tag">Debugging</span>
+                            <span class="skill-tag">Networking</span>
+                            <span class="skill-tag">Robotics</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-         <div class="project">
-      <!-- <img src="https://via.placeholder.com/400x200/1e293b/60a5fa?text=SE+Project" alt="SE Project"> -->
-      <h3>Software Engineering Project (IT314)</h3>
-      <p>Complete software development lifecycle implementation for semester project.</p>
-      <div class="tags">
-        <span class="tag">Software Engineering</span>
-        <span class="tag">IT314</span>
-        <span class="tag">Full Lifecycle</span>
-      </div>
-      <div class="project-links">
-        <a href="https://github.com/Physic69/SE_project" target="_blank">GitHub</a>
-      </div>
-    </div>
-    </div>
-    
-    <div class="view-all">
-      <a href="projects.html" class="view-all-btn">View All Projects →</a>
-    </div>
-  </section>
+        <!-- PROJECTS -->
+        <section class="projects" id="projects">
+            <div class="container">
+                <div class="section-header reveal">
+                    <div class="section-label">My Work</div>
+                    <h2 class="section-title">Projects</h2>
+                    <p class="section-subtitle">Things I've built, broken, and shipped.</p>
+                </div>
+                <div class="projects-filter reveal">
+                    <button class="filter-btn active" onclick="filterProjects('all', this)">All</button>
+                    <button class="filter-btn" onclick="filterProjects('systems', this)">Systems</button>
+                    <button class="filter-btn" onclick="filterProjects('iot', this)">IoT & Robotics</button>
+                    <button class="filter-btn" onclick="filterProjects('web', this)">Web / DB</button>
+                    <button class="filter-btn" onclick="filterProjects('research', this)">Research</button>
+                </div>
+                <div class="projects-grid" id="projectsGrid">
 
-  <!-- Skills -->
-<section id="skills" class="skills">
-  <div class="skill-card">
-    <h3> Languages</h3>
-    <ul class="skill-list">
-      <li>C, C++</li>
-      <li>Python, Lua</li>
-      <li>PostgreSQL, MATLAB</li>
-      <li>HTML, CSS, TypeScript, JavaScript, React</li>
-    </ul>
-  </div>
-  
-  <div class="skill-card">
-    <h3>Systems & IoT</h3>
-    <ul class="skill-list">
-      <li>Embedded C</li>
-      <li>IoT Systems (ESP32)</li>
-      <li>Linux, Shell</li>
-      <!-- <li>Hardware Integration</li> -->
-    </ul>
-  </div>
-  
-  <div class="skill-card">
-    <h3> Robotics & Vision</h3>
-    <ul class="skill-list">
-      <li>SLAM Algorithms</li>
-      <li>OpenCV, ArUco Markers</li>
-      <li>Controls, Robotics</li>
-      <li>ROS, Gazebo</li>
-    </ul>
-  </div>
-  
-  <div class="skill-card">
-    <h3> Web & DevOps</h3>
-    <ul class="skill-list">
-      <li>Back end Development</li>
-      <!-- <li>Git</li> -->
-      <li>Git, VS Code, neovim</li>
-      <li>Database Design</li>
-    </ul>
-  </div>
-  
-  <div class="skill-card">
-    <h3>Coursework & Interests</h3>
-    <ul class="skill-list">
-      <!-- <li>DBMS, System Programming</li> -->
-      <li>AI/ML, Data Analysis</li>
-      <li> Open source</li>
-      <li>Simulations, Robotics</li>
-    </ul>
-  </div>
-</section>
+                    <!-- 1. Lunatik -->
+                    <div class="project-card reveal" data-category="systems">
+                        <div class="project-card-top-bar"></div>
+                        <div class="project-featured-badge">FEATURED</div>
+                        <div class="project-card-header">
+                            <div class="project-icon-box">
+                                <span class="project-icon-char" style="color: var(--diamond-blue);">K</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/luainkernel/lunatik/commits/master/?author=Physic69" target="_blank" class="project-link" title="GitHub">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-card-body">
+                            <h3 class="project-title">Lunatik - Linux Kernel Contributions</h3>
+                            <p class="project-description">
+                                Implemented kernel-space signal handling functions (kill, sigpending,
+                                sigprocmask) exposing Linux kernel syscalls to Lua scripts running
+                                in kernel mode. Set up CI/CD pipeline and improved memory safety
+                                in the luadata module.
+                            </p>
+                        </div>
+                        <div class="project-card-footer">
+                            <div class="project-tech">
+                                <span class="tech-tag">C</span>
+                                <span class="tech-tag">Lua</span>
+                                <span class="tech-tag">Linux Kernel</span>
+                                <span class="tech-tag">GitHub Actions</span>
+                            </div>
+                        </div>
+                    </div>
 
+                    <!-- 2. Robotic Arm -->
+                    <div class="project-card reveal reveal-delay-1" data-category="iot">
+                        <div class="project-card-top-bar"></div>
+                        <div class="project-featured-badge">FEATURED</div>
+                        <div class="project-card-header">
+                            <div class="project-icon-box">
+                                <span class="project-icon-char" style="color: var(--redstone-red);">R</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/Physic69/Vision-Based-Robotic-Arm-Control-" target="_blank" class="project-link">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-card-body">
+                            <h3 class="project-title">Vision-Based Robotic Arm Control</h3>
+                            <p class="project-description">
+                                Autonomous Braccio robotic arm that detects and manipulates objects
+                                using ArUco markers, computer vision, and inverse kinematics.
+                                Python controls communicate with Arduino while a camera
+                                tracks marker positions in real-time.
+                            </p>
+                        </div>
+                        <div class="project-card-footer">
+                            <div class="project-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">OpenCV</span>
+                                <span class="tech-tag">Arduino</span>
+                                <span class="tech-tag">Kinematics</span>
+                            </div>
+                        </div>
+                    </div>
 
-  <!-- About -->
-  <section id="about" class="about">
-    <h2>A bit about me</h2>
-    <p>3rd year ICT student at DAU. Passionate about robotics, computer vision, IoT systems, and backend development. Featured projects showcase SLAM navigation, robotic arm control, and competitive coding platforms.</p>
-    <a href="mailto:you@example.com" class="cta">Get in touch</a>
-  </section>
+                    <!-- 3. IoT -->
+                    <div class="project-card reveal reveal-delay-2" data-category="iot">
+                        <div class="project-card-top-bar"></div>
+                        <div class="project-featured-badge">FEATURED</div>
+                        <div class="project-card-header">
+                            <div class="project-icon-box">
+                                <span class="project-icon-char" style="color: var(--emerald-green);">I</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/Physic69/IoT_Project" target="_blank" class="project-link">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-card-body">
+                            <h3 class="project-title">IoT Sensor System with AWS</h3>
+                            <p class="project-description">
+                                End-to-end IoT pipeline using ESP32 and sensors connected to
+                                AWS cloud with battery optimization. Sensor data is visualized
+                                in real-time through a web dashboard.
+                            </p>
+                        </div>
+                        <div class="project-card-footer">
+                            <div class="project-tech">
+                                <span class="tech-tag">ESP32</span>
+                                <span class="tech-tag">AWS</span>
+                                <span class="tech-tag">Sensors</span>
+                                <span class="tech-tag">Web Dashboard</span>
+                            </div>
+                        </div>
+                    </div>
 
-  <!-- Footer -->
-  <footer>
-    <div class="social">
-      <a href="https://github.com/Physic69" target="_blank">⭐</a>
-      <a href="mailto:you@example.com">✉️</a>
-    </div>
-    <p>&copy; 2025 L Venkata Subramanyam.</p>
-  </footer>
+                    <!-- 4. TCP DB -->
+                    <div class="project-card reveal reveal-delay-3" data-category="systems">
+                        <div class="project-card-top-bar"></div>
+                        <div class="project-featured-badge">FEATURED</div>
+                        <div class="project-card-header">
+                            <div class="project-icon-box">
+                                <span class="project-icon-char" style="color: var(--gold-yellow);">T</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/Physic69/woc7.0-system-programming-terminal-database" target="_blank" class="project-link">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-card-body">
+                            <h3 class="project-title">TCP Terminal Database System</h3>
+                            <p class="project-description">
+                                TCP socket-based client-server application in C++ enabling
+                                command-line database operations with persistent binary file
+                                storage, efficient data retrieval, and real-time server responses.
+                            </p>
+                        </div>
+                        <div class="project-card-footer">
+                            <div class="project-tech">
+                                <span class="tech-tag">C++</span>
+                                <span class="tech-tag">TCP Sockets</span>
+                                <span class="tech-tag">Binary I/O</span>
+                                <span class="tech-tag">Client-Server</span>
+                            </div>
+                        </div>
+                    </div>
 
-  <script>
-    // Smooth scrolling
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({behavior: 'smooth'});
-      });
-    });
-    
-    // Header scroll effect
-    window.addEventListener('scroll', () => {
-      document.getElementById('header').classList.toggle('scrolled', window.scrollY > 100);
-    });
-  </script>
+                    <!-- 5. LDPC -->
+                    <div class="project-card reveal" data-category="research">
+                        <div class="project-card-top-bar"></div>
+                        <div class="project-featured-badge">FEATURED</div>
+                        <div class="project-card-header">
+                            <div class="project-icon-box">
+                                <span class="project-icon-char" style="color: var(--lapis-blue);">5</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/Physic69/LDPC-Code_Simulation_for_5G_NR" target="_blank" class="project-link">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-card-body">
+                            <h3 class="project-title">LDPC Code Simulation for 5G NR</h3>
+                            <p class="project-description">
+                                Simulated LDPC codes under various code rates and decoding
+                                techniques. Sum-Product decoding showed near-optimal performance.
+                                Validates LDPC effectiveness for reliable 5G NR communication.
+                            </p>
+                        </div>
+                        <div class="project-card-footer">
+                            <div class="project-tech">
+                                <span class="tech-tag">MATLAB</span>
+                                <span class="tech-tag">5G NR</span>
+                                <span class="tech-tag">LDPC</span>
+                                <span class="tech-tag">Signal Processing</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 6. SmartMapper -->
+                    <div class="project-card reveal reveal-delay-1" data-category="research">
+                        <div class="project-card-top-bar"></div>
+                        <div class="project-card-header">
+                            <div class="project-icon-box">
+                                <span class="project-icon-char" style="color: var(--obsidian-purple);">M</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/Physic69/SmartMapper" target="_blank" class="project-link">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-card-body">
+                            <h3 class="project-title">SmartMapper - SLAM vs Dead Reckoning</h3>
+                            <p class="project-description">
+                                Comparing Dead Reckoning and SLAM-based localization on mobile
+                                devices. Evaluating accuracy, drift, and real-world applicability
+                                of different indoor positioning approaches.
+                            </p>
+                        </div>
+                        <div class="project-card-footer">
+                            <div class="project-tech">
+                                <span class="tech-tag">SLAM</span>
+                                <span class="tech-tag">Mobile Dev</span>
+                                <span class="tech-tag">Sensors</span>
+                                <span class="tech-tag">Localization</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 7. Kernel Process -->
+                    <div class="project-card reveal reveal-delay-2" data-category="systems">
+                        <div class="project-card-top-bar"></div>
+                        <div class="project-card-header">
+                            <div class="project-icon-box">
+                                <span class="project-icon-char" style="color: var(--diamond-blue);">D</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://gist.github.com/Physic69/b718061e729bcf6ca1083ba87a6ba4bc" target="_blank" class="project-link">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-card-body">
+                            <h3 class="project-title">Linux Kernel Process Reference</h3>
+                            <p class="project-description">
+                                Comprehensive reference covering process states, wait queues,
+                                task_struct, CFS scheduling, and kernel synchronization.
+                                Includes eBPF-based debugging for D-state hangs.
+                            </p>
+                        </div>
+                        <div class="project-card-footer">
+                            <div class="project-tech">
+                                <span class="tech-tag">Linux Kernel</span>
+                                <span class="tech-tag">eBPF</span>
+                                <span class="tech-tag">CFS</span>
+                                <span class="tech-tag">Documentation</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 8. Coding Platform DB -->
+                    <div class="project-card reveal reveal-delay-3" data-category="web">
+                        <div class="project-card-top-bar"></div>
+                        <div class="project-card-header">
+                            <div class="project-icon-box">
+                                <span class="project-icon-char" style="color: var(--emerald-green);">Q</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/Physic69/Coding_Platform_DB" target="_blank" class="project-link">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-card-body">
+                            <h3 class="project-title">Coding Platform Database</h3>
+                            <p class="project-description">
+                                Relational database system for an online coding platform
+                                supporting user management, problem storage, contest hosting,
+                                and submission tracking with optimized queries.
+                            </p>
+                        </div>
+                        <div class="project-card-footer">
+                            <div class="project-tech">
+                                <span class="tech-tag">SQL</span>
+                                <span class="tech-tag">PostgreSQL</span>
+                                <span class="tech-tag">ER Design</span>
+                                <span class="tech-tag">Normalization</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 9. Social Media -->
+                    <div class="project-card reveal" data-category="web">
+                        <div class="project-card-top-bar"></div>
+                        <div class="project-card-header">
+                            <div class="project-icon-box">
+                                <span class="project-icon-char" style="color: var(--redstone-red);">S</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/Physic69/SE_project" target="_blank" class="project-link">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-card-body">
+                            <h3 class="project-title">Social Media Platform</h3>
+                            <p class="project-description">
+                                Full-stack social media application built as a Software Engineering
+                                project. Features user profiles, posts, interactions, and a
+                                responsive interface.
+                            </p>
+                        </div>
+                        <div class="project-card-footer">
+                            <div class="project-tech">
+                                <span class="tech-tag">Full Stack</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">Database</span>
+                                <span class="tech-tag">REST API</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 10. Binary Search -->
+                    <div class="project-card reveal reveal-delay-1" data-category="web">
+                        <div class="project-card-top-bar"></div>
+                        <div class="project-card-header">
+                            <div class="project-icon-box">
+                                <span class="project-icon-char" style="color: var(--gold-yellow);">B</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/Physic69/Bin_Sear" target="_blank" class="project-link">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-card-body">
+                            <h3 class="project-title">Binary Search Visualizer</h3>
+                            <p class="project-description">
+                                Interactive visualization tool for binary search algorithm,
+                                helping users understand the step-by-step process with
+                                animated visuals.
+                            </p>
+                        </div>
+                        <div class="project-card-footer">
+                            <div class="project-tech">
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">Visualization</span>
+                                <span class="tech-tag">Algorithms</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ACHIEVEMENTS -->
+        <section class="achievements" id="achievements">
+            <div class="container">
+                <div class="section-header reveal">
+                    <div class="section-label">Achievements</div>
+                    <h2 class="section-title">Milestones</h2>
+                    <p class="section-subtitle">Accomplishments along the way.</p>
+                </div>
+                <div class="achievements-grid">
+                    <div class="achievement-card reveal reveal-delay-1">
+                        <div class="achievement-title">Winter of Code - MW Position</div>
+                        <div class="achievement-desc">
+                            Achieved MW position in Winter of Code in the Computer System
+                            Programming Track. Worked on real kernel-level and systems projects.
+                        </div>
+                    </div>
+                    <div class="achievement-card reveal reveal-delay-2">
+                        <div class="achievement-title">Gazebo - Top Contributor</div>
+                        <div class="achievement-desc">
+                            Recognized as top contributor in the Gazebo Jetty Tutorial
+                            Testing Party. Helped validate and improve robotics simulation docs.
+                        </div>
+                    </div>
+                    <div class="achievement-card reveal reveal-delay-3">
+                        <div class="achievement-title">JEE Mains - 98.67 %ile</div>
+                        <div class="achievement-desc">
+                            Scored 98.67 percentile in JEE Mains with an All India Rank
+                            of 15514 among over a million candidates.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EDUCATION -->
+        <section class="education" id="education">
+            <div class="container">
+                <div class="section-header reveal">
+                    <div class="section-label">Education</div>
+                    <h2 class="section-title">Academic Path</h2>
+                </div>
+                <div class="education-card reveal">
+                    <div class="education-card-top"></div>
+                    <div class="education-card-dirt"></div>
+                    <div class="education-card-content">
+                        <div class="education-header">
+                            <div class="education-icon">
+                                <div class="education-icon-text">DA<br>IICT</div>
+                            </div>
+                            <div class="education-info">
+                                <h3>Dhirubhai Ambani Institute of ICT</h3>
+                                <div class="degree">B.Tech in Information & Communication Technology</div>
+                                <div class="year">2022 - 2026 | 3rd Year</div>
+                            </div>
+                        </div>
+                        <div class="education-details">
+                            <p>
+                                Studying a comprehensive curriculum spanning computer science,
+                                electronics, and communication systems. Actively building projects
+                                in kernel development, IoT, robotics, and open-source contributions.
+                            </p>
+                            <div class="coursework-tags">
+                                <span class="coursework-tag">Computer System Programming</span>
+                                <span class="coursework-tag">Operating Systems</span>
+                                <span class="coursework-tag">DBMS</span>
+                                <span class="coursework-tag">DLCO</span>
+                                <span class="coursework-tag">Intro to Robotics</span>
+                                <span class="coursework-tag">Embedded Hardware Design</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section class="contact" id="contact">
+            <div class="container">
+                <div class="section-header reveal">
+                    <div class="section-label">Get In Touch</div>
+                    <h2 class="section-title">Let's Connect</h2>
+                </div>
+                <div class="contact-content reveal">
+                    <p class="contact-text">
+                        I'm always excited to discuss new opportunities, interesting projects,
+                        or anything related to systems programming, kernel dev, and robotics.
+                        Drop me a line 😊
+                    </p>
+                    <div class="contact-links">
+                        <a href="mailto:lvenkatsubramanyam@gmail.com" class="contact-link">
+                            <span class="contact-icon" style="color: var(--redstone-red);">@</span>
+                            <div>
+                                <div>Email</div>
+                                <div class="contact-link-label">lvenkatsubramanyam@gmail.com</div>
+                            </div>
+                        </a>
+                        <a href="https://github.com/Physic69" target="_blank" class="contact-link">
+                            <span class="contact-icon" style="color: var(--text-primary);">GH</span>
+                            <div>
+                                <div>GitHub</div>
+                                <div class="contact-link-label">Physic69</div>
+                            </div>
+                        </a>
+                        <a href="https://www.linkedin.com/in/lingampalli-venkata-subramanyam/" target="_blank" class="contact-link">
+                            <span class="contact-icon" style="color: var(--lapis-blue);">in</span>
+                            <div>
+                                <div>LinkedIn</div>
+                                <div class="contact-link-label">Venkata Subramanyam</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-dirt"></div>
+        <p class="footer-text">
+            Crafted with <span class="heart">&#9829;</span> by L Venkata Subramanyam | 2025
+        </p>
+        <p class="footer-craft">BLOCK BY BLOCK</p>
+    </footer>
+
+    <script src="js/image-data.js"></script>
+    <script src="js/cursor.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
