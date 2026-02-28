@@ -25,7 +25,7 @@
     <!-- Navbar -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="index.html" class="nav-logo">LVS<span class="dot">_</span></a>
+            <a href="index.html" class="nav-logo">LVS</a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#about" onclick="closeNav()">About</a></li>
                 <li><a href="#skills" onclick="closeNav()">Skills</a></li>
@@ -63,7 +63,7 @@
                         <div class="hero-buttons">
                             <a href="projects.html" class="btn btn-primary">View Projects</a>
                             <a href="https://github.com/Physic69" target="_blank" class="btn btn-outline">GitHub</a>
-                            <a href="#" class="btn btn-outline" id="resumeBtn">Resume</a>
+                            <!-- <a href="#" class="btn btn-outline" id="resumeBtn">Resume</a> -->
                         </div>
                         <div class="hero-stats">
                             <div class="stat">
@@ -86,7 +86,7 @@
                             <div class="hero-card-dirt"></div>
                             <div class="hero-card-content">
                                 <div class="terminal-header">
-                                    <span class="terminal-title">player_data.lua</span>
+                                    <span class="terminal-title">dmesg</span>
                                     <div class="terminal-dots">
                                         <div class="terminal-dot red"></div>
                                         <div class="terminal-dot yellow"></div>
@@ -95,31 +95,42 @@
                                 </div>
                                 <div class="terminal-body">
                                     <div class="terminal-line">
-                                        <span class="t-prompt">></span>
-                                        <span>cat player.json</span>
+                                        <span class="t-prompt">[ 0.000000]</span>
+                                        <span class="t-key">LVS:</span>
+                                        <span class="t-string">Initializing universal dev...</span>
                                     </div>
                                     <div class="terminal-line">
-                                        <span class="t-key">"name"</span>:
-                                        <span class="t-string">"L Venkata Subramanyam"</span>
+                                        <span class="t-prompt">[ 0.000015]</span>
+                                        <span class="t-key">LVS:</span>
+                                        <span class="t-string">Probing Robotics & CV...</span>
+                                        <span class="t-value">[ OK ]</span>
                                     </div>
                                     <div class="terminal-line">
-                                        <span class="t-key">"class"</span>:
-                                        <span class="t-string">"Systems Programmer"</span>
+                                        <span class="t-prompt">[ 0.000020]</span>
+                                        <span class="t-key">LVS:</span>
+                                        <span class="t-string">Probing Kernel/Systems...</span>
+                                        <span class="t-value">[ OK ]</span>
                                     </div>
                                     <div class="terminal-line">
-                                        <span class="t-key">"guild"</span>:
-                                        <span class="t-string">"DA-IICT"</span>
+                                        <span class="t-prompt">[ 0.000025]</span>
+                                        <span class="t-key">LVS:</span>
+                                        <span class="t-string">Probing IoT/Embedded...</span>
+                                        <span class="t-value">[ OK ]</span>
                                     </div>
                                     <div class="terminal-line">
-                                        <span class="t-key">"skills"</span>:
-                                        <span class="t-bracket">[</span><span class="t-value">"Kernel", "IoT", "Robotics"</span><span class="t-bracket">]</span>
+                                        <span class="t-prompt">[ 0.000040]</span>
+                                        <span class="t-key">LVS:</span>
+                                        <span class="t-string">Memory optimized for learning.</span>
                                     </div>
                                     <div class="terminal-line">
-                                        <span class="t-key">"oss"</span>:
-                                        <span class="t-value">true</span>
+                                        <span class="t-prompt">[ 0.000060]</span>
+                                        <span class="t-key">LVS:</span>
+                                        <span class="t-string">Architecture: Multi-threaded.</span>
                                     </div>
                                     <div class="terminal-line">
-                                        <span class="t-prompt">></span>
+                                        <span class="t-prompt">[ 0.000080]</span>
+                                        <span class="t-key">LVS:</span>
+                                        <span class="t-string">Core ready.</span>
                                         <span class="terminal-cursor"></span>
                                     </div>
                                 </div>
